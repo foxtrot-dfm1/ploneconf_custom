@@ -18,7 +18,9 @@
   <include package=".behaviors" />
 
   <include file="permissions.zcml" />
-  
+
+  <include package=".behavior" />
+
   <include file="upgrades.zcml" />
 
   <genericsetup:registerProfile
