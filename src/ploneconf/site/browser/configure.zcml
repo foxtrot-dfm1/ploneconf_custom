@@ -11,6 +11,13 @@
       layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
       />
 
+  <browser:page
+    name="demo_content"
+    for="*"
+    class="ploneconf.site.browser.demo.DemoContent"
+    permission="cmf.ManagePortal"
+    />
+
   <!-- Publish static files -->
   <plone:static
       name="ploneconf.site"
