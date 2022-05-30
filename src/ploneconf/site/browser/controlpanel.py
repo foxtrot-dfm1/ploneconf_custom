@@ -58,6 +58,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Talk",
                         "de": "Vortrag",
+                        "default": "Talk",
                     },
                 },
                 {
@@ -65,6 +66,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Lightning-Talk",
                         "de": "Lightning-Talk",
+                        "default": "Talk"
                     },
                 },
             ]
@@ -90,6 +92,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Beginner",
                         "de": "Anfänger",
+                        "default": "Beginner",
                     },
                 },
                 {
@@ -97,6 +100,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Advanced",
                         "de": "Fortgeschrittene",
+                        "default": "Advanced",
                     },
                 },
                 {
@@ -104,6 +108,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Professional",
                         "de": "Profi",
+                        "default": "Professional"
                     },
                 },
             ]
@@ -129,6 +134,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "101",
                         "de": "101",
+                        "default": "101",
                     },
                 },
                 {
@@ -136,6 +142,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "201",
                         "de": "201",
+                        "default": "201",
                     },
                 },
                 {
@@ -143,6 +150,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Auditorium",
                         "de": "Auditorium",
+                        "default": "Auditorium"
                     },
                 },
             ]
