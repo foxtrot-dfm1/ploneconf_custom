@@ -18,6 +18,8 @@
   <include package=".behaviors" />
 
   <include file="permissions.zcml" />
+  
+  <include file="upgrades.zcml" />
 
   <genericsetup:registerProfile
       name="default"
