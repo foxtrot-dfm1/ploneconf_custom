@@ -18,6 +18,18 @@
     permission="cmf.ManagePortal"
     />
 
+
+    <browser:page
+        name="ploneconf-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.PloneConfControlPanelFormWrapper"
+        permission="cmf.ManagePortal"
+        layer="ploneconf.site.interfaces.IPloneconfSiteLayer"
+        />
+
+    <adapter
+        factory="ploneconf.site.browser.controlpanel.PloneConfRegistryConfigletPanel"
+        name="ploneconf-controlpanel" />
   <!-- Publish static files -->
   <plone:static
       name="ploneconf.site"
