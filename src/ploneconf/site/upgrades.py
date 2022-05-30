@@ -81,3 +81,15 @@ def upgrade_site(context=None):
             source=obj,
             target=schedule_folder,
             safe_id=True)
+
+def add_some_indexes(setup):
+    setup.runImportStepFromProfile(default_profile, 'catalog')
+    for brain in api.content.find(portal_type='talk'):
+        obj = brain.getObject()
+        obj.reindexObject(idxs=[
+          'type_of_talk',
+          'speaker',
+          'audience',
+          'room',
+          'featured',
+          ])
