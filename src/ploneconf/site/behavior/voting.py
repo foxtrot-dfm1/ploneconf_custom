@@ -17,11 +17,9 @@ class Vote(object):
         self.context = context
         annotations = IAnnotations(context)
         if KEY not in annotations.keys():
-            annotations[KEY] = PersistentDict({
-                "voted": PersistentList(),
-                'votes': PersistentDict()
-                })
-        self.annotations = annotations[KEY]
+            self.clear()
+        else:
+            self.annotations = annotations[KEY]
 
     @property
     def votes(self):
@@ -31,7 +29,7 @@ class Vote(object):
     def voted(self):
         return self.annotations['voted']
     
-        def _hash(self, request):
+    def _hash(self, request):
         """
         This hash can be tricked out by changing IP addresses and might allow
         only a single person of a big company to vote
@@ -46,7 +44,9 @@ class Vote(object):
         if self.already_voted(request):
             raise KeyError("You may not vote twice")
         vote = int(vote)
-        self.annotations['voted'].append(self._hash(request))
+        self.annotations['voted'].insert(
+            self._hash(request),
+            len(self.annotations['voted']))
         votes = self.annotations['votes']
         if vote not in votes:
             votes[vote] = 1
@@ -69,7 +69,6 @@ class Vote(object):
 
     def clear(self):
         annotations = IAnnotations(self.context)
-        annotations[KEY] = PersistentDict(
-            {'voted': PersistentList(), 'votes': PersistentDict()}
-        )
-        self.annotations = annotations[KEY]
+        annotations[KEY] = OOBTree()
+        annotations[KEY]['voted'] = OIBTree()
+        annotations[KEY]['votes'] = OOBTree

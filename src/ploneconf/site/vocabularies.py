@@ -11,7 +11,7 @@ def TalkTypesVocabulary(context):
     items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
     return SimpleVocabulary.fromItems(
-        [[item["token"], item["token"], item["titles"].get(lang, "default")] for item in items]
+        [[item["token"], item["token"], item["titles"].get(lang, None) or item["titles"]["default"]] for item in items]
     )
 
 
@@ -22,7 +22,7 @@ def AudiencesVocabulary(context):
     items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
     return SimpleVocabulary.fromItems(
-        [[item["token"], item["token"], item["titles"].get(lang, "default")] for item in items]
+        [[item["token"], item["token"], item["titles"].get(lang, None) or item["titles"]["default"]] for item in items]
     )
 
 
@@ -33,5 +33,5 @@ def RoomsVocabularyFactory(context):
     items = registry_record_value.get("items", [])
     lang = api.portal.get_current_language()
     return SimpleVocabulary.fromItems(
-        [[item["token"], item["token"], item["titles"].get(lang, "default")] for item in items]
+        [[item["token"], item["token"], item["titles"].get(lang, None) or item["titles"]["default"]] for item in items]
     )
