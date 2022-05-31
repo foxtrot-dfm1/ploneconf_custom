@@ -66,7 +66,7 @@ class IPloneconfSettings(Interface):
                     "titles": {
                         "en": "Lightning-Talk",
                         "de": "Lightning-Talk",
-                        "default": "Talk"
+                        "default": "Lightning-Talk"
                     },
                 },
             ]
